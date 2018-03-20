@@ -1,8 +1,8 @@
 // Load required modules
-var http    = require("https");              // http server core module
+var https    = require("https");              // http server core module
 var express = require("express");           // web framework external module
 var serveStatic = require('serve-static');  // serve static files
-var socketIo = require("socket.io");        // web socket external module
+var socketIo = require("socket.io")(https);        // web socket external module
 var easyrtc = require("../");               // EasyRTC external module
 
 var fs = require("fs");
