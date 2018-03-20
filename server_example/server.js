@@ -1,9 +1,20 @@
 // Load required modules
-var http    = require("http");              // http server core module
+var http    = require("https");              // http server core module
 var express = require("express");           // web framework external module
 var serveStatic = require('serve-static');  // serve static files
 var socketIo = require("socket.io");        // web socket external module
 var easyrtc = require("../");               // EasyRTC external module
+
+var fs = require("fs");
+var os = require('os');
+var path = require('path');
+var certFilePath = path.resolve(__dirname, "fullchain.pem");
+var keyFilePath = path.resolve(__dirname, "privkey.pem");
+var options = {
+    key: fs.readFileSync(keyFilePath),
+    cert: fs.readFileSync(certFilePath),
+    requestCert: false
+};
 
 // Set process name
 process.title = "node-easyrtc";
@@ -13,7 +24,16 @@ var app = express();
 app.use(serveStatic('static', {'index': ['index.html']}));
 
 // Start Express http server on port 8080
-var webServer = http.createServer(app).listen(8080);
+// var webServer = http.createServer(app).listen(8080);
+
+var webServer = http.createServer(
+    {
+        key: fs.readFileSync(keyFilePath),
+        cert: fs.readFileSync(certFilePath),
+        requestCert: false
+    },
+    app).listen(8443);
+
 
 // Start Socket.io so it attaches itself to Express server
 var socketServer = socketIo.listen(webServer, {"log level":1});
