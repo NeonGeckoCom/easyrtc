@@ -2,7 +2,7 @@
 var https    = require("https");              // http server core module
 var express = require("express");           // web framework external module
 var serveStatic = require('serve-static');  // serve static files
-var socketIo = require("socket.io")(https);        // web socket external module
+var socketIo = require("socket.io");        // web socket external module
 var easyrtc = require("../");               // EasyRTC external module
 
 var fs = require("fs");
@@ -36,7 +36,7 @@ var webServer = https.createServer(
 
 
 // Start Socket.io so it attaches itself to Express server
-var socketServer = socketIo.listen(webServer, {"log level":1});
+var socketServer = socketIo.listen(webServer, {"log level":1})(https);
 
 easyrtc.setOption("logLevel", "debug");
 
