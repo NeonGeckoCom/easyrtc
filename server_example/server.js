@@ -26,17 +26,11 @@ app.use(serveStatic('static', {'index': ['index.html']}));
 // Start Express http server on port 8080
 // var webServer = http.createServer(app).listen(8080);
 
-var webServer = https.createServer(
-    {
-        key: fs.readFileSync(keyFilePath),
-        cert: fs.readFileSync(certFilePath),
-        requestCert: false
-    },
-    app).listen(8443);
+var webServer = https.createServer(options,app).listen(8443,'64.34.187.223');
 
 
 // Start Socket.io so it attaches itself to Express server
-var socketServer = socketIo.listen(webServer, {"log level":1})(https);
+var socketServer = socketIo.listen(webServer, {"log level":1});
 
 easyrtc.setOption("logLevel", "debug");
 
