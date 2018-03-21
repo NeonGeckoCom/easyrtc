@@ -26,7 +26,7 @@ app.use(serveStatic('static', {'index': ['index.html']}));
 // Start Express http server on port 8080
 // var webServer = http.createServer(app).listen(8080);
 
-var webServer = http.createServer(
+var webServer = https.createServer(
     {
         key: fs.readFileSync(keyFilePath),
         cert: fs.readFileSync(certFilePath),
