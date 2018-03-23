@@ -689,6 +689,7 @@ function appInit() {
 
 
     easyrtc.setRoomOccupantListener(callEverybodyElse);
+    easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.easyApp("easyrtc.multiparty", "box0", ["box1", "box2", "box3"], loginSuccess);
     easyrtc.setPeerListener(messageListener);
     easyrtc.setDisconnectListener( function() {
