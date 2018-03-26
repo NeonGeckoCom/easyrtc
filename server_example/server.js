@@ -10,6 +10,8 @@ var os = require('os');
 var path = require('path');
 var certFilePath = '';
 var keyFilePath = '';
+var serverIPAddress = '';
+getLocalIP();
 if (serverIPAddress.indexOf('187.223') != -1){
     certFilePath = path.resolve('/etc/letsencrypt/live/3333.us/fullchain.pem');
     keyFilePath = path.resolve('/etc/letsencrypt/live/3333.us/privkey.pem');
@@ -24,6 +26,43 @@ var options = {
     cert: fs.readFileSync(certFilePath),
     requestCert: false
 };
+
+
+function getLocalIP(){
+
+    var os = require('os');
+    var ifaces = os.networkInterfaces();
+
+    Object.keys(ifaces).forEach(function (ifname) {
+        var alias = 0;
+
+        ifaces[ifname].forEach(function (iface) {
+            if ('IPv4' !== iface.family || iface.internal !== false) {
+                // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
+                return;
+            }
+
+            if (alias == 0) {
+                myConsole('ifname and address = ' + ifname + ' - ' + iface.address);
+                if (iface.address.indexOf('186.92') != -1 || iface.address.indexOf('187.223') != -1 ) {
+                    // if (iface.address.indexOf('145.185') != -1 || iface.address.indexOf('187.223') != -1 ) {
+                    serverIPAddress = iface.address;
+                }
+                return iface.address;
+            }
+
+            if (alias >= 1) {
+                // this single interface has multiple ipv4 addresses
+                //console.log(ifname + ':' + alias, iface.address);
+            } else {
+                // this interface has only one ipv4 adress
+                //console.log(ifname, iface.address);
+            }
+            ++alias;
+        });
+    });
+}
+
 
 // Set process name
 process.title = "node-easyrtc";
