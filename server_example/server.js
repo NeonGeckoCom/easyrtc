@@ -8,8 +8,17 @@ var easyrtc = require("../");               // EasyRTC external module
 var fs = require("fs");
 var os = require('os');
 var path = require('path');
-var certFilePath = path.resolve(__dirname, "fullchain.pem");
-var keyFilePath = path.resolve(__dirname, "privkey.pem");
+var certFilePath = '';
+var keyFilePath = '';
+if (serverIPAddress.indexOf('187.223') != -1){
+    certFilePath = path.resolve('/etc/letsencrypt/live/3333.us/fullchain.pem');
+    keyFilePath = path.resolve('/etc/letsencrypt/live/3333.us/privkey.pem');
+}else{
+    certFilePath = path.resolve('/etc/letsencrypt/live/0000.us/fullchain.pem');
+    keyFilePath = path.resolve('/etc/letsencrypt/live/0000.us/privkey.pem');
+}
+// var certFilePath = path.resolve(__dirname, "fullchain.pem");
+// var keyFilePath = path.resolve(__dirname, "privkey.pem");
 var options = {
     key: fs.readFileSync(keyFilePath),
     cert: fs.readFileSync(certFilePath),
