@@ -45,6 +45,7 @@ var contactedListeners = {};
 var nameToIdMap = {};
 
 function connect() {
+    easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.enableDebug(false);
     var tempName = document.getElementById('userName').value;
     if(  !easyrtc.isNameValid(tempName)) {

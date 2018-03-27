@@ -42,6 +42,7 @@ function buildReceiveAreaName(easyrtcid) {
 function connect() {
     var otherClientsDiv = document.getElementById('otherClients');
 
+    easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.enableDataChannels(true);
     easyrtc.enableVideo(false);
     easyrtc.enableAudio(false);

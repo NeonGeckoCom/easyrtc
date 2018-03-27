@@ -27,6 +27,7 @@ var selfEasyrtcid = "";
 
 
 function connect() {
+    easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.enableDebug(false);
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.demo4", "selfVideo",

@@ -30,6 +30,7 @@ var channelIsActive = {}; // tracks which channels are active
 
 function connect() {
     easyrtc.enableDebug(false);
+    easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.enableDataChannels(true);
     easyrtc.enableVideo(false);
     easyrtc.enableAudio(false);

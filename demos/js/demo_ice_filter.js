@@ -35,6 +35,7 @@ function iceCandidateFilter( iceCandidate, fromPeer) {
 }
 
 function connect() {
+    easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.setIceCandidateFilter(iceCandidateFilter);
     easyrtc.easyApp("easyrtc.iceFilter", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);

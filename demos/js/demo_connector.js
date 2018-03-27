@@ -2,6 +2,7 @@ var selfEasyrtcid = "";
 
 
 function connect() {
+    easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.setVideoDims(640,480);
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);

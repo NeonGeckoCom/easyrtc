@@ -170,6 +170,7 @@ function peerListener(who, msgType, content, targeting) {
 }
 
 function connect() {
+    easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.setPeerListener(peerListener);
     easyrtc.setRoomOccupantListener(occupantListener);
     easyrtc.setRoomEntryListener(roomEntryListener);
