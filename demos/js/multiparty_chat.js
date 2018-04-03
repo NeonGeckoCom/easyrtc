@@ -248,33 +248,76 @@ function reshape4of4(parentw, parenth) {
     }
 }
 
-function reshape1of5(parentw, parenth) {}
+function reshape1of5(parentw, parenth) {
+    return {
+        left: (parentw - sharedVideoWidth*2)/4,
+        top: (parenth - sharedVideoHeight*2)/3,
+        width: sharedVideoWidth,
+        height: sharedVideoHeight
+    }
+}
+
+function reshape2of5(parentw, parenth) {
+    return {
+        left: (parentw - sharedVideoWidth*2)/4*2+ sharedVideoWidth,
+        top: (parenth - sharedVideoHeight*2)/3,
+        width: sharedVideoWidth,
+        height: sharedVideoHeight
+    }
+}
+function reshape3of5(parentw, parenth) {
+    return {
+        left: (parentw - sharedVideoWidth*2)/4*3+ sharedVideoWidth*2,
+        top: (parenth - sharedVideoHeight*2)/3,
+        width: sharedVideoWidth,
+        height: sharedVideoHeight
+    }
+}
+
+function reshape4of5(parentw, parenth) {
+    return {
+        left: (parentw - sharedVideoWidth*2)/4,
+        top: (parenth - sharedVideoHeight*2)/3*2 + sharedVideoHeight,
+        width: sharedVideoWidth,
+        height: sharedVideoHeight
+    }
+}
+
+function reshape5of5(parentw, parenth) {
+    return {
+        left: (parentw - sharedVideoWidth*2)/4*2 + sharedVideoWidth,
+        top: (parenth - sharedVideoHeight*2)/3*2 + sharedVideoHeight,
+        width: sharedVideoWidth,
+        height: sharedVideoHeight
+    }
+}
+
+// function reshape1of5(parentw, parenth) {}
+// function reshape2of5(parentw, parenth) {}
+// function reshape3of5(parentw, parenth) {}
+// function reshape4of5(parentw, parenth) {}
+// function reshape5of5(parentw, parenth) {}
 function reshape1of6(parentw, parenth) {}
-function reshape1of7(parentw, parenth) {}
-function reshape1of8(parentw, parenth) {}
-function reshape2of5(parentw, parenth) {}
 function reshape2of6(parentw, parenth) {}
-function reshape2of7(parentw, parenth) {}
-function reshape2of8(parentw, parenth) {}
-function reshape3of5(parentw, parenth) {}
 function reshape3of6(parentw, parenth) {}
-function reshape3of7(parentw, parenth) {}
-function reshape3of8(parentw, parenth) {}
-function reshape4of5(parentw, parenth) {}
 function reshape4of6(parentw, parenth) {}
-function reshape4of7(parentw, parenth) {}
-function reshape4of8(parentw, parenth) {}
-function reshape5of5(parentw, parenth) {}
 function reshape5of6(parentw, parenth) {}
-function reshape5of7(parentw, parenth) {}
-function reshape5of8(parentw, parenth) {}
 function reshape6of6(parentw, parenth) {}
+function reshape1of7(parentw, parenth) {}
+function reshape2of7(parentw, parenth) {}
+function reshape3of7(parentw, parenth) {}
+function reshape4of7(parentw, parenth) {}
+function reshape5of7(parentw, parenth) {}
 function reshape6of7(parentw, parenth) {}
-function reshape6of8(parentw, parenth) {}
 function reshape7of7(parentw, parenth) {}
+function reshape1of8(parentw, parenth) {}
+function reshape2of8(parentw, parenth) {}
+function reshape3of8(parentw, parenth) {}
+function reshape4of8(parentw, parenth) {}
+function reshape5of8(parentw, parenth) {}
+function reshape6of8(parentw, parenth) {}
 function reshape7of8(parentw, parenth) {}
 function reshape8of8(parentw, parenth) {}
-
 
 var boxUsed = [true, false, false, false, false, false, false, false];
 var connectCount = 0;
