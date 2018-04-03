@@ -204,7 +204,8 @@ function reshape3of3(parentw, parenth) {
     }
     else {
         return{
-            left: (parentw-sharedVideoWidth*2)/3*1.5+sharedVideoWidth/2,
+            left: (parentw-sharedVideoWidth*2)/3,
+            // left: (parentw-sharedVideoWidth*2)/3*1.5+sharedVideoWidth/2,
             top:  (parenth -sharedVideoHeight*2)/3*2+ sharedVideoHeight,
             width: sharedVideoWidth,
             height: sharedVideoHeight
