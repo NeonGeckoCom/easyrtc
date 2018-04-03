@@ -755,7 +755,9 @@ function callEverybodyElse(roomName, otherPeople) {
             }
         }
         function callFailure(errorCode, errorText) {
-            easyrtc.showError(errorCode, errorText);
+            // easyrtc.showError(errorCode, errorText);
+            console.log('error code = '+ errorCode + '. error text = ' +
+                errorText)
             if( connectCount < maxCALLERS && position > 0) {
                 establishConnection(position-1);
             }
