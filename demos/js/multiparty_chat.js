@@ -2,7 +2,7 @@
 
 var activeBox = -1;  // nothing selected
 var aspectRatio = 4/3;  // standard definition video aspect ratio
-var maxCALLERS = 3;
+var maxCALLERS = 7;
 var numVideoOBJS = maxCALLERS+1;
 var layout;
 
@@ -248,7 +248,35 @@ function reshape4of4(parentw, parenth) {
     }
 }
 
-var boxUsed = [true, false, false, false];
+function reshape1of5(parentw, parenth) {}
+function reshape1of6(parentw, parenth) {}
+function reshape1of7(parentw, parenth) {}
+function reshape1of8(parentw, parenth) {}
+function reshape2of5(parentw, parenth) {}
+function reshape2of6(parentw, parenth) {}
+function reshape2of7(parentw, parenth) {}
+function reshape2of8(parentw, parenth) {}
+function reshape3of5(parentw, parenth) {}
+function reshape3of6(parentw, parenth) {}
+function reshape3of7(parentw, parenth) {}
+function reshape3of8(parentw, parenth) {}
+function reshape4of5(parentw, parenth) {}
+function reshape4of6(parentw, parenth) {}
+function reshape4of7(parentw, parenth) {}
+function reshape4of8(parentw, parenth) {}
+function reshape5of5(parentw, parenth) {}
+function reshape5of6(parentw, parenth) {}
+function reshape5of7(parentw, parenth) {}
+function reshape5of8(parentw, parenth) {}
+function reshape6of6(parentw, parenth) {}
+function reshape6of7(parentw, parenth) {}
+function reshape6of8(parentw, parenth) {}
+function reshape7of7(parentw, parenth) {}
+function reshape7of8(parentw, parenth) {}
+function reshape8of8(parentw, parenth) {}
+
+
+var boxUsed = [true, false, false, false, false, false, false, false];
 var connectCount = 0;
 
 
@@ -284,6 +312,26 @@ function setSharedVideoSize(parentw, parenth) {
             w = sizeBy(parentw, 1);
             h = sizeBy(parenth, 3);
             break;
+        case 'p5':
+        case 'p6':
+            w = sizeBy(parentw, 2);
+            h = sizeBy(parenth, 3);
+            break;
+        case 'l5':
+        case 'l6':
+            w = sizeBy(parentw, 3);
+            h = sizeBy(parenth, 2);
+            break;
+        case 'p7':
+        case 'p8':
+            w = sizeBy(parentw, 2);
+            h = sizeBy(parenth, 4);
+            break;
+        case 'l7':
+        case 'l8':
+            w = sizeBy(parentw, 4);
+            h = sizeBy(parenth, 2);
+            break;
     }
     sharedVideoWidth = Math.min(w, h * aspectRatio);
     sharedVideoHeight = Math.min(h, w/aspectRatio);
@@ -302,6 +350,10 @@ var reshapeThumbs = [
                 case 1:return reshape1of2(parentw, parenth);
                 case 2:return reshape1of3(parentw, parenth);
                 case 3:return reshape1of4(parentw, parenth);
+                case 4:return reshape1of5(parentw, parenth);
+                case 5:return reshape1of6(parentw, parenth);
+                case 6:return reshape1of7(parentw, parenth);
+                case 7:return reshape1of8(parentw, parenth);
             }
         }
     },
@@ -317,6 +369,14 @@ var reshapeThumbs = [
                     return reshape2of3(parentw, parenth);
                 case 3:
                     return reshape2of4(parentw, parenth);
+                case 4:
+                    return reshape2of5(parentw, parenth);
+                case 5:
+                    return reshape2of6(parentw, parenth);
+                case 6:
+                    return reshape2of7(parentw, parenth);
+                case 7:
+                    return reshape2of8(parentw, parenth);
             }
         }
     },
@@ -336,7 +396,35 @@ var reshapeThumbs = [
                         return reshape3of3(parentw, parenth);
                     }
                 case 3:
-                    return reshape3of4(parentw, parenth);
+                    if( !boxUsed[1]) {
+                        return reshape2of3(parentw, parenth);
+                    }
+                    else {
+                        return reshape3of3(parentw, parenth);
+                    }
+                case 4:
+                    if( !boxUsed[1]) {
+                        return reshape2of3(parentw, parenth);
+                    }
+                    else {
+                        return reshape3of3(parentw, parenth);
+                    }
+                case 5:
+                    if( !boxUsed[1]) {
+                        return reshape2of3(parentw, parenth);
+                    }
+                    else {
+                        return reshape3of3(parentw, parenth);
+                    }
+                case 6:
+                    if( !boxUsed[1]) {
+                        return reshape2of3(parentw, parenth);
+                    }
+                    else {
+                        return reshape3of3(parentw, parenth);
+                    }
+                case 7:
+                    return reshape7of8(parentw, parenth);
             }
         }
     },
@@ -352,6 +440,14 @@ var reshapeThumbs = [
                     return reshape3of3(parentw, parenth);
                 case 3:
                     return reshape4of4(parentw, parenth);
+                case 4:
+                    return reshape4of4(parentw, parenth);
+                case 5:
+                    return reshape6of6(parentw, parenth);
+                case 6:
+                    return reshape7of7(parentw, parenth);
+                case 7:
+                    return reshape8of8(parentw, parenth);
             }
         }
     },
