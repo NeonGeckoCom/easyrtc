@@ -1113,6 +1113,22 @@ function messageListener(easyrtcid, msgType, content) {
 }
 
 
+var qs = (function(a) {
+    if (a == "") return {};
+    var b = {};
+    for (var i = 0; i < a.length; ++i)
+    {
+        var p=a[i].split('=', 2);
+        if (p.length == 1)
+            b[p[0]] = "";
+        else
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+})(window.location.search.substr(1).split('&'));
+
+
+
 function appInit() {
 
     // Prep for the top-down layout manager
@@ -1130,7 +1146,7 @@ function appInit() {
     window.onresize = handleWindowResize;
     handleWindowResize(); //initial call of the top-down layout manager
 
-    var roomName = '<?php print isset($_GET["cid"]) ? $_GET["cid"] : "default" ?>';
+    var roomName = qs['cid'];
     var otherPeople = [];
 
     easyrtc.setRoomOccupantListener(callEverybodyElse(roomName, otherPeople));
