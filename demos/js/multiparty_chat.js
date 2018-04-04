@@ -962,11 +962,42 @@ function muteActiveBox() {
 }
 
 
+var needToCallOtherUsers;
 
+easyrtc.setRoomEntryListener(function(entry, roomName) {
+    if (roomName = qs['cid']){
+        needToCallOtherUsers = true;
+    }
+});
+
+easyrtc.setRoomOccupantListener(function(roomName, userList, selfInfo) {
+    var easyrtcid;
+    if (needToCallOtherUsers) {
+        for (easyrtcid in userList) {
+            easyrtc.call(
+                easyrtcid,
+                function success(otherCaller, mediaType) {
+                    console.log('success: ', otherCaller, mediaType);
+                },
+                function failure(errorCode, errorMessage) {
+                    console.log('failure: ', errorCode, errorMessage);
+                }
+            );
+        }
+        needToCallOtherUsers = false;
+    }
+});
 
 function callEverybodyElse(roomName, otherPeople) {
+    if (roomName === null) {
+        return;
+    }
 
-    roomName = qs['cid'];
+    if (roomName != qs['cid']) {
+        return;
+    }
+
+    // roomName = qs['cid'];
 
     easyrtc.setRoomOccupantListener(null); // so we're only called once.
 
@@ -1005,6 +1036,16 @@ function callEverybodyElse(roomName, otherPeople) {
 
 function loginSuccess(roomName, others) {
     expandThumb(0);  // expand the mirror image initially.
+
+    roomName = qs['cid'];
+    easyrtc.joinRoom(roomName, null,
+        function() {
+            console.log('added to room: '+ roomName);
+            /* we'll geta room entry event for the room we were actually added to */
+        },
+        function(errorCode, errorText, roomName) {
+            easyrtc.showError(errorCode, errorText + ": room name was(" + roomName + ")");
+        });
 }
 
 
