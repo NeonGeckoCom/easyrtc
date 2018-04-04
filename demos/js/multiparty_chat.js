@@ -966,8 +966,6 @@ function muteActiveBox() {
 
 function callEverybodyElse(roomName, otherPeople) {
 
-    var roomName = '<?php print isset($_GET["cid"]) ? $_GET["cid"] : "default" ?>';
-
 
     easyrtc.setRoomOccupantListener(null); // so we're only called once.
 
@@ -1132,8 +1130,10 @@ function appInit() {
     window.onresize = handleWindowResize;
     handleWindowResize(); //initial call of the top-down layout manager
 
+    var roomName = '<?php print isset($_GET["cid"]) ? $_GET["cid"] : "default" ?>';
+    var otherPeople = [];
 
-    easyrtc.setRoomOccupantListener(callEverybodyElse);
+    easyrtc.setRoomOccupantListener(callEverybodyElse(roomName, otherPeople));
     easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.easyApp("easyrtc.multiparty", "box0", ["box1", "box2", "box3", "box4", "box5", "box6", "box7"], loginSuccess);
     easyrtc.setPeerListener(messageListener);
