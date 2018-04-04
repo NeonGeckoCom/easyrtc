@@ -13,6 +13,7 @@
 
 .boxCommon {
     /*position:absolute;*/
+    float: left;
 }
 
 .closeButton {
