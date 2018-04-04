@@ -1003,7 +1003,7 @@ function callEverybodyElse(roomName, otherPeople) {
 }
 
 
-function loginSuccess() {
+function loginSuccess(roomName, others) {
     expandThumb(0);  // expand the mirror image initially.
 }
 
