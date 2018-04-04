@@ -966,6 +966,9 @@ function muteActiveBox() {
 
 function callEverybodyElse(roomName, otherPeople) {
 
+    var roomName = '<?php print isset($_GET["cid"]) ? $_GET["cid"] : "default" ?>';
+
+
     easyrtc.setRoomOccupantListener(null); // so we're only called once.
 
     var list = [];
