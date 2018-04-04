@@ -1147,9 +1147,9 @@ function appInit() {
     handleWindowResize(); //initial call of the top-down layout manager
 
     var roomName = qs['cid'];
-    var otherPeople = [];
+    // var otherPeople = [];
 
-    easyrtc.setRoomOccupantListener(callEverybodyElse(roomName, otherPeople));
+    easyrtc.setRoomOccupantListener(callEverybodyElse(roomName));
     easyrtc.setSocketUrl("https://3333.us:8443");
     easyrtc.easyApp("easyrtc.multiparty", "box0", ["box1", "box2", "box3", "box4", "box5", "box6", "box7"], loginSuccess);
     easyrtc.setPeerListener(messageListener);
