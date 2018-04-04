@@ -683,8 +683,8 @@ var reshapeThumbs = [
     },
     function(parentw, parenth) {
 
-        if( activeBox > 0 ) {
-            return setThumbSize(0.20, 0.01, 0.01, parentw, parenth);
+        if( activeBox > 0 || !boxUsed[4] ) {
+            return setThumbSize(0.20, 0.01, 25.01, parentw, parenth);
         }
         else {
             setSharedVideoSize(parentw, parenth)
@@ -701,8 +701,8 @@ var reshapeThumbs = [
         }
     },
     function(parentw, parenth) {
-        if( activeBox >= 0 || !boxUsed[1]) {
-            return setThumbSize(0.20, 0.01, -0.01, parentw, parenth);
+        if( activeBox >= 0 || !boxUsed[5]) {
+            return setThumbSize(0.20, 0.01, -25.01, parentw, parenth);
         }
         else{
             switch(connectCount) {
@@ -724,8 +724,8 @@ var reshapeThumbs = [
         }
     },
     function(parentw, parenth) {
-        if( activeBox >= 0 || !boxUsed[2] ) {
-            return setThumbSize(0.20, -0.01, 0.01, parentw, parenth);
+        if( activeBox >= 0 || !boxUsed[6] ) {
+            return setThumbSize(0.20, -0.01, 50.01, parentw, parenth);
         }
         else  {
             switch(connectCount){
@@ -772,8 +772,8 @@ var reshapeThumbs = [
         }
     },
     function(parentw, parenth) {
-        if( activeBox >= 0 || !boxUsed[3]) {
-            return setThumbSize(0.20, -0.01, -0.01, parentw, parenth);
+        if( activeBox >= 0 || !boxUsed[7]) {
+            return setThumbSize(0.20, -0.01, -50.01, parentw, parenth);
         }
         else{
             switch(connectCount){
