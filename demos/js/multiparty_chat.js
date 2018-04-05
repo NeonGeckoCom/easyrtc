@@ -1146,10 +1146,10 @@ function showMessage(startX, startY, content) {
             cloudObject.style.width = "4px";
             cloudObject.style.height = "4px";
             fullPage.removeChild(textObject);
-        }, 9000);
+        }, 29000);
         setTimeout(function(){
             fullPage.removeChild(cloudObject);
-        }, 10000);
+        }, 30000);
     }
 }
 
