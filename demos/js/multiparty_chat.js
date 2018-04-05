@@ -1129,7 +1129,7 @@ function showMessage(startX, startY, content) {
         }, 10);
         setTimeout(function() {
             textObject = document.createElement('div');
-            // textObject.className = "boxCommon";
+            textObject.className = "textFloat";
             textObject.style.left = Math.floor(centerEndX-fullW/8) + "px";
             textObject.style.top = Math.floor(centerEndY) + "px";
             textObject.style.fontSize = "36pt";
