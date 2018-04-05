@@ -1141,16 +1141,16 @@ function showMessage(startX, startY, content) {
             textObject.onclick = removeCloud;
             cloudObject.onclick = removeCloud;
         }, 1000);
-        setTimeout(function() {
-            cloudObject.style.left = startX + "px";
-            cloudObject.style.top = startY + "px";
-            cloudObject.style.width = "4px";
-            cloudObject.style.height = "4px";
+        // setTimeout(function() {
+        //     cloudObject.style.left = startX + "px";
+        //     cloudObject.style.top = startY + "px";
+        //     cloudObject.style.width = "4px";
+        //     cloudObject.style.height = "4px";
             fullPage.removeChild(textObject);
-        }, 29000);
-        setTimeout(function(){
-            fullPage.removeChild(cloudObject);
-        }, 30000);
+        // }, 29000);
+        // setTimeout(function(){
+        //     fullPage.removeChild(cloudObject);
+        // }, 30000);
     }
 }
 
