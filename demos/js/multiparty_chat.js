@@ -1133,7 +1133,7 @@ function showMessage(startX, startY, content) {
             textObject.style.left = Math.floor(centerEndX-fullW/8) + "px";
             textObject.style.top = startY + "px";
             // textObject.style.top = Math.floor(centerEndY) + "px";
-            textObject.style.fontSize = "36pt";
+            textObject.style.fontSize = "24pt";
             textObject.style.width = (fullW*.4) + "px";
             textObject.style.height = (fullH*.4) + "px";
             textObject.style.zIndex = 6;
@@ -1142,16 +1142,16 @@ function showMessage(startX, startY, content) {
             textObject.onclick = removeCloud;
             cloudObject.onclick = removeCloud;
         }, 1000);
-        // setTimeout(function() {
-        //     cloudObject.style.left = startX + "px";
-        //     cloudObject.style.top = startY + "px";
-        //     cloudObject.style.width = "4px";
-        //     cloudObject.style.height = "4px";
+        setTimeout(function() {
+            cloudObject.style.left = startX + "px";
+            cloudObject.style.top = startY + "px";
+            cloudObject.style.width = "4px";
+            cloudObject.style.height = "4px";
             fullPage.removeChild(textObject);
-        // }, 29000);
-        // setTimeout(function(){
-        //     fullPage.removeChild(cloudObject);
-        // }, 30000);
+        }, 29000);
+        setTimeout(function(){
+            fullPage.removeChild(cloudObject);
+        }, 30000);
     }
 }
 
