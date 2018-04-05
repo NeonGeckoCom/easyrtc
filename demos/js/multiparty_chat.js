@@ -1112,7 +1112,8 @@ function showMessage(startX, startY, content) {
         cloudObject.style.height = "4px";
         cloudObject.style.opacity = 0.7;
         cloudObject.style.zIndex = 5;
-        cloudObject.className = "transit boxCommon";
+        cloudObject.className = "transit";
+        // cloudObject.className = "transit boxCommon";
         var textObject;
         function removeCloud() {
             if( textObject) {
@@ -1128,7 +1129,7 @@ function showMessage(startX, startY, content) {
         }, 10);
         setTimeout(function() {
             textObject = document.createElement('div');
-            textObject.className = "boxCommon";
+            // textObject.className = "boxCommon";
             textObject.style.left = Math.floor(centerEndX-fullW/8) + "px";
             textObject.style.top = Math.floor(centerEndY) + "px";
             textObject.style.fontSize = "36pt";
