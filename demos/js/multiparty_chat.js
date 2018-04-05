@@ -1112,7 +1112,7 @@ function showMessage(startX, startY, content) {
         cloudObject.style.height = "4px";
         cloudObject.style.opacity = 0.7;
         cloudObject.style.zIndex = 5;
-        cloudObject.className = "transit";
+        cloudObject.className = "transit textFloat";
         // cloudObject.className = "transit boxCommon";
         var textObject;
         function removeCloud() {
