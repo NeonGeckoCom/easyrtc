@@ -1131,7 +1131,8 @@ function showMessage(startX, startY, content) {
             textObject = document.createElement('div');
             textObject.className = "textFloat";
             textObject.style.left = Math.floor(centerEndX-fullW/8) + "px";
-            textObject.style.top = Math.floor(centerEndY) + "px";
+            textObject.style.top = startY + "px";
+            // textObject.style.top = Math.floor(centerEndY) + "px";
             textObject.style.fontSize = "36pt";
             textObject.style.width = (fullW*.4) + "px";
             textObject.style.height = (fullH*.4) + "px";
