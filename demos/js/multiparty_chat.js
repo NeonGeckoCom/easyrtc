@@ -251,8 +251,10 @@ function reshape4of4(parentw, parenth) {
 
 function reshape1of5(parentw, parenth) {
     return {
-        left: (parentw - sharedVideoWidth*3)/4,
-        top: (parenth - sharedVideoHeight*2)/3,
+        left: 0,
+        top: 0,
+        // left: (parentw - sharedVideoWidth*3)/4,
+        // top: (parenth - sharedVideoHeight*2)/3,
         width: sharedVideoWidth,
         height: sharedVideoHeight
     }
@@ -260,16 +262,20 @@ function reshape1of5(parentw, parenth) {
 
 function reshape2of5(parentw, parenth) {
     return {
-        left: (parentw - sharedVideoWidth*3)/4*2+ sharedVideoWidth,
-        top: (parenth - sharedVideoHeight*2)/3,
+        left: 0,
+        top: 0,
+        // left: (parentw - sharedVideoWidth*3)/4*2+ sharedVideoWidth,
+        // top: (parenth - sharedVideoHeight*2)/3,
         width: sharedVideoWidth,
         height: sharedVideoHeight
     }
 }
 function reshape3of5(parentw, parenth) {
     return {
-        left: (parentw - sharedVideoWidth*3)/4*3+ sharedVideoWidth*2,
-        top: (parenth - sharedVideoHeight*2)/3,
+        left: 0,
+        top: 0,
+        // left: (parentw - sharedVideoWidth*3)/4*3+ sharedVideoWidth*2,
+        // top: (parenth - sharedVideoHeight*2)/3,
         width: sharedVideoWidth,
         height: sharedVideoHeight
     }
@@ -277,8 +283,10 @@ function reshape3of5(parentw, parenth) {
 
 function reshape4of5(parentw, parenth) {
     return {
-        left: (parentw - sharedVideoWidth*3)/4,
-        top: (parenth - sharedVideoHeight*2)/3*2 + sharedVideoHeight,
+        left: 0,
+        top: 0,
+        // left: (parentw - sharedVideoWidth*3)/4,
+        // top: (parenth - sharedVideoHeight*2)/3*2 + sharedVideoHeight,
         width: sharedVideoWidth,
         height: sharedVideoHeight
     }
@@ -286,8 +294,10 @@ function reshape4of5(parentw, parenth) {
 
 function reshape5of5(parentw, parenth) {
     return {
-        left: (parentw - sharedVideoWidth*3)/4*2 + sharedVideoWidth,
-        top: (parenth - sharedVideoHeight*2)/3*2 + sharedVideoHeight,
+        left: 0,
+        top: 0,
+        // left: (parentw - sharedVideoWidth*3)/4*2 + sharedVideoWidth,
+        // top: (parenth - sharedVideoHeight*2)/3*2 + sharedVideoHeight,
         width: sharedVideoWidth,
         height: sharedVideoHeight
     }
