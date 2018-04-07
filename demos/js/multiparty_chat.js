@@ -1201,7 +1201,16 @@ function appInit() {
     handleWindowResize(); //initial call of the top-down layout manager
 
     easyrtc.setRoomOccupantListener(callEverybodyElse);
-    easyrtc.setSocketUrl("https://3333.us:8443");
+
+    var svr = '<?php print $_SERVER["SERVER_ADDR"] ?>';
+    var videoSvr = '';
+    if (svr.indexOf('187.223') != -1) {
+        videoSvr = 'https://3333.us';
+    } else {
+        videoSvr = 'https://0000.us';
+    }
+    easyrtc.setSocketUrl(videoSvr + ":8443");
+    
     easyrtc.easyApp("easyrtc.multiparty", "box0", ["box1", "box2", "box3", "box4", "box5", "box6", "box7"], loginSuccess);
     easyrtc.setPeerListener(messageListener);
     easyrtc.setDisconnectListener( function() {
