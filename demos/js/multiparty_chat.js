@@ -1,5 +1,3 @@
-<script>
-
 var activeBox = -1;  // nothing selected
 var aspectRatio = 4/3;  // standard definition video aspect ratio
 var maxCALLERS = 7;
@@ -1202,9 +1200,8 @@ function appInit() {
 
     easyrtc.setRoomOccupantListener(callEverybodyElse);
 
-    var svr = '<?php print $_SERVER["SERVER_ADDR"] ?>';
     var videoSvr = '';
-    if (svr.indexOf('187.223') != -1) {
+    if (qs['svr'].indexOf('187.223') != -1) {
         videoSvr = 'https://3333.us';
     } else {
         videoSvr = 'https://0000.us';
@@ -1245,6 +1242,3 @@ function appInit() {
         },20);
     });
 }
-
-
-</script>
