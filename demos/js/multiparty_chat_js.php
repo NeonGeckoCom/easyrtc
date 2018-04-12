@@ -1,4 +1,4 @@
-
+<script>
 
 var activeBox = -1;  // nothing selected
 var aspectRatio = 4/3;  // standard definition video aspect ratio
@@ -1247,3 +1247,4 @@ function appInit() {
 }
 
 
+</script>
