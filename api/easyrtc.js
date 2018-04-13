@@ -6355,7 +6355,7 @@ var Easyrtc = function() {
                         break;
                     case "failed":
                         if (failureCB) {
-                            failureCB(self.errCodes.NOVIABLEICE, "No usable STUN/TURN path");
+                            // failureCB(self.errCodes.NOVIABLEICE, "No usable STUN/TURN path");
                         }
                         delete peerConns[otherUser];
                         break;
