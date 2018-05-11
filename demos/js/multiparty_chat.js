@@ -1190,8 +1190,8 @@ function startRecording() {
     selfRecorder = easyrtc.recordToFile( easyrtc.getLocalStream(),
         selfLink, "selfVideo");
     if( selfRecorder ) {
-        document.getElementById("startRecording").disabled = true;
-        document.getElementById("stopRecording").disabled = false;
+        document.getElementById("startRecordingButton").disabled = true;
+        document.getElementById("stopRecordingButton").disabled = false;
     }
     else {
         window.alert("failed to start recorder for self");
@@ -1222,8 +1222,8 @@ function endRecording() {
     if( callerRecorder ) {
         callerRecorder.stop();
     }
-    document.getElementById("startRecording").disabled = false;
-    document.getElementById("stopRecording").disabled = true;
+    document.getElementById("startRecordingButton").disabled = false;
+    document.getElementById("stopRecordingButton").disabled = true;
 }
 // video recording code - end <<<<<<<<<<<<<<<<<<<<<<<<<<
 
