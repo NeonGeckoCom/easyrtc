@@ -1179,7 +1179,53 @@ var qs = (function(a) {
     return b;
 })(window.location.search.substr(1).split('&'));
 
+// video recording code - start <<<<<<<<<<<<<<<<<<<<<<<<<<
+var selfRecorder = null;
+var callerRecorder = null;
 
+function startRecording() {
+    var selfLink = document.getElementById("selfDownloadLink");
+    selfLink.innerText = "";
+
+    selfRecorder = easyrtc.recordToFile( easyrtc.getLocalStream(),
+        selfLink, "selfVideo");
+    if( selfRecorder ) {
+        document.getElementById("startRecording").disabled = true;
+        document.getElementById("stopRecording").disabled = false;
+    }
+    else {
+        window.alert("failed to start recorder for self");
+        return;
+    }
+
+    var callerLink = document.getElementById("callerDownloadLink");
+    callerLink.innerText = "";
+
+    if( easyrtc.getIthCaller(0)) {
+        callerRecorder = easyrtc.recordToFile(
+            easyrtc.getRemoteStream(easyrtc.getIthCaller(0), null),
+            callerLink, "callerVideo");
+        if( !callerRecorder ) {
+            window.alert("failed to start recorder for caller");
+        }
+    }
+    else {
+        callerRecorder = null;
+    }
+}
+
+
+function endRecording() {
+    if( selfRecorder ) {
+        selfRecorder.stop();
+    }
+    if( callerRecorder ) {
+        callerRecorder.stop();
+    }
+    document.getElementById("startRecording").disabled = false;
+    document.getElementById("stopRecording").disabled = true;
+}
+// video recording code - end <<<<<<<<<<<<<<<<<<<<<<<<<<
 
 function appInit() {
 
@@ -1193,6 +1239,10 @@ function appInit() {
     setReshaper('textentryBox', reshapeTextEntryBox);
     setReshaper('textentryField', reshapeTextEntryField);
     setReshaper('textEntryButton', reshapeTextEntryButton);
+    setReshaper('startRecordingButton', reshapeTextEntryButton);
+    setReshaper('stopRecordingButton', reshapeTextEntryButton);
+    document.getElementById('startRecordingButton').style.display = 'block';
+    document.getElementById('stopRecordingButton').style.display = 'block';
 
     updateMuteImage(false);
     window.onresize = handleWindowResize;
