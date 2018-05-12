@@ -1190,8 +1190,10 @@ function startRecording() {
     selfRecorder = easyrtc.recordToFile( easyrtc.getLocalStream(),
         selfLink, "selfVideo");
     if( selfRecorder ) {
-        document.getElementById("startRecordingButton").disabled = true;
-        document.getElementById("stopRecordingButton").disabled = false;
+        document.getElementById('startRecordingButton').style.display = 'none';
+        document.getElementById('stopRecordingButton').style.display = 'block';
+        // document.getElementById("startRecordingButton").disabled = true;
+        // document.getElementById("stopRecordingButton").disabled = false;
     }
     else {
         window.alert("failed to start recorder for self");
@@ -1222,8 +1224,10 @@ function endRecording() {
     if( callerRecorder ) {
         callerRecorder.stop();
     }
-    document.getElementById("startRecordingButton").disabled = false;
-    document.getElementById("stopRecordingButton").disabled = true;
+    document.getElementById('startRecordingButton').style.display = 'block';
+    document.getElementById('stopRecordingButton').style.display = 'none';
+    // document.getElementById("startRecordingButton").disabled = false;
+    // document.getElementById("stopRecordingButton").disabled = true;
 }
 // video recording code - end <<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -1242,7 +1246,7 @@ function appInit() {
     setReshaper('startRecordingButton', reshapeTextEntryButton);
     setReshaper('stopRecordingButton', reshapeTextEntryButton);
     document.getElementById('startRecordingButton').style.display = 'block';
-    document.getElementById('stopRecordingButton').style.display = 'block';
+    document.getElementById('stopRecordingButton').style.display = 'none';
 
     updateMuteImage(false);
     window.onresize = handleWindowResize;
