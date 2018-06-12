@@ -173,6 +173,7 @@
            return null;
        }
        mediaRecorder.ondataavailable = function(e) {
+           console.dir(e);
            dataCallback(e.data);
        }
        return mediaRecorder;
