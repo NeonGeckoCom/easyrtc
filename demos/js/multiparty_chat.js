@@ -1194,6 +1194,15 @@ function startRecording() {
         document.getElementById('stopRecordingButton').style.display = 'block';
         // document.getElementById("startRecordingButton").disabled = true;
         // document.getElementById("stopRecordingButton").disabled = false;
+        var myVar = setInterval(myTimer ,10000);
+        function myTimer() {
+            var d = new Date();
+            selfRecorder.requestData()
+            // document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+        }
+        selfRecorder.onstop = function() {
+            clearInterval(myVar);
+        }
     }
     else {
         window.alert("failed to start recorder for self");
