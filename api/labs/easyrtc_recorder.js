@@ -192,7 +192,7 @@
 
        function dataConsumer(chunk) {
           chunks.push(chunk);
-          console.log('easyrtc_recorder.js >>> size of chunk = '+ chunk.length );
+          console.log('easyrtc_recorder.js >>> size of chunk = '+ length(chunk) );
           console.log('easyrtc_recorder.js >>> type of chunk = '+ typeof(chunk));
        }
 
