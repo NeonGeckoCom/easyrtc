@@ -192,6 +192,8 @@
 
        function dataConsumer(chunk) {
           chunks.push(chunk);
+          logDebug('size of chunk = '+ chunk.length );
+          logDebug('type of chunk = '+ typeof(chunk));
        }
 
        var mediaRecorder = easyrtc.recordToCallback(mediaStream,
