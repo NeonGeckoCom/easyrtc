@@ -1200,9 +1200,9 @@ function startRecording() {
             selfRecorder.requestData()
             // document.getElementById("demo").innerHTML = d.toLocaleTimeString();
         }
-        selfRecorder.onstop = function() {
-            clearInterval(myVar);
-        }
+        // selfRecorder.onstop = function() {
+        //     clearInterval(myVar);
+        // }
     }
     else {
         window.alert("failed to start recorder for self");
