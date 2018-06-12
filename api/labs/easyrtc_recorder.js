@@ -194,8 +194,8 @@
 
        function dataConsumer(chunk) {
           chunks.push(chunk);
-          pub.util.logDebug('size of chunk = '+ chunk.length );
-          pub.util.logDebug('type of chunk = '+ typeof(chunk));
+          console.log('easyrtc_recorder.js >>> size of chunk = '+ chunk.length );
+          console.log('easyrtc_recorder.js >>> type of chunk = '+ typeof(chunk));
        }
 
        var mediaRecorder = easyrtc.recordToCallback(mediaStream,
