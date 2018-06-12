@@ -49,6 +49,8 @@
   }
 }(this, function (easyrtc, undefined) {
 
+    var pub         = require("./easyrtc_public_obj");  // EasyRTC public object
+
     /**
      * Provides methods for building MediaStream recorders.
      * @class Easyrtc_Recorder
@@ -192,8 +194,8 @@
 
        function dataConsumer(chunk) {
           chunks.push(chunk);
-          logDebug('size of chunk = '+ chunk.length );
-          logDebug('type of chunk = '+ typeof(chunk));
+          pub.util.logDebug('size of chunk = '+ chunk.length );
+          pub.util.logDebug('type of chunk = '+ typeof(chunk));
        }
 
        var mediaRecorder = easyrtc.recordToCallback(mediaStream,
