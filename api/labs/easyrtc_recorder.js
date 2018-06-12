@@ -49,8 +49,6 @@
   }
 }(this, function (easyrtc, undefined) {
 
-    var pub         = require("./easyrtc_public_obj");  // EasyRTC public object
-
     /**
      * Provides methods for building MediaStream recorders.
      * @class Easyrtc_Recorder
