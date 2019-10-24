@@ -12,9 +12,9 @@ var certFilePath = '';
 var keyFilePath = '';
 var serverIPAddress = '';
 getLocalIP();
-if (serverIPAddress.indexOf('187.223') != -1){
-    certFilePath = path.resolve('/etc/letsencrypt/live/3333.us/fullchain.pem');
-    keyFilePath = path.resolve('/etc/letsencrypt/live/3333.us/privkey.pem');
+if (serverIPAddress.indexOf('186.120') != -1){
+    certFilePath = path.resolve('/etc/letsencrypt/live/2222.us/fullchain.pem');
+    keyFilePath = path.resolve('/etc/letsencrypt/live/2222.us/privkey.pem');
 }else{
     certFilePath = path.resolve('/etc/letsencrypt/live/0000.us/fullchain.pem');
     keyFilePath = path.resolve('/etc/letsencrypt/live/0000.us/privkey.pem');
@@ -44,7 +44,7 @@ function getLocalIP(){
 
             if (alias == 0) {
                 console.log('ifname and address = ' + ifname + ' - ' + iface.address);
-                if (iface.address.indexOf('186.92') != -1 || iface.address.indexOf('187.223') != -1 ) {
+                if (iface.address.indexOf('186.92') != -1 || iface.address.indexOf('186.120') != -1 ) {
                     // if (iface.address.indexOf('145.185') != -1 || iface.address.indexOf('187.223') != -1 ) {
                     serverIPAddress = iface.address;
                 }

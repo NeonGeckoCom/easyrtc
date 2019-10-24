@@ -35,7 +35,7 @@ function initApp() {
 }
 
 function connect() {
-    easyrtc.setSocketUrl("https://3333.us:8443");
+    easyrtc.setSocketUrl("https://2222.us:8443");
     easyrtc.connect("easyrtc.reconnect", loginSuccess, loginFailure);
 }
 

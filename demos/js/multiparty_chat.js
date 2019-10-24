@@ -1264,8 +1264,8 @@ function appInit() {
     easyrtc.setRoomOccupantListener(callEverybodyElse);
 
     var videoSvr = '';
-    if (qs['svr'].indexOf('187.223') != -1) {
-        videoSvr = 'https://3333.us';
+    if (qs['svr'].indexOf('186.120') != -1) {
+        videoSvr = 'https://2222.us';
     } else {
         videoSvr = 'https://0000.us';
     }

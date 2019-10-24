@@ -44,7 +44,7 @@ function enable(domId) {
 
 function connect() {
     console.log("Initializing.");
-    easyrtc.setSocketUrl("https://3333.us:8443");
+    easyrtc.setSocketUrl("https://2222.us:8443");
 
     var userName = document.getElementById('userName').value;
     if( !easyrtc.isNameValid(userName)) {

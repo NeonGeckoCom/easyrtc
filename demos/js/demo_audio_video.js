@@ -39,7 +39,7 @@ var onceOnly = true;
 
 
 function connect() {
-    easyrtc.setSocketUrl("https://3333.us:8443");
+    easyrtc.setSocketUrl("https://2222.us:8443");
     easyrtc.enableAudio(document.getElementById("shareAudio").checked);
   easyrtc.enableVideo(document.getElementById("shareVideo").checked);
   easyrtc.enableDataChannels(true);

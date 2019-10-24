@@ -9,7 +9,7 @@ function connect() {
     var remoteFilter = easyrtc.buildRemoteSdpFilter({
         audioSendBitrate: 20, videoSendBitrate:30
     });
-    easyrtc.setSocketUrl("https://3333.us:8443");
+    easyrtc.setSocketUrl("https://2222.us:8443");
     easyrtc.setSdpFilters(localFilter, remoteFilter);
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.lowbandwidth", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);

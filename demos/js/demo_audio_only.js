@@ -40,7 +40,7 @@ function connect() {
     easyrtc.enableVideo(false);
     easyrtc.enableVideoReceive(false);
     easyrtc.setRoomOccupantListener(convertListToButtons);
-    easyrtc.setSocketUrl("https://3333.us:8443");
+    easyrtc.setSocketUrl("https://2222.us:8443");
     easyrtc.initMediaSource(
         function(){        // success callback
             easyrtc.connect("easyrtc.audioOnly", loginSuccess, loginFailure);

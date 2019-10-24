@@ -36,7 +36,7 @@ function enable(domId) {
 
 
 function connect() {
-    easyrtc.setSocketUrl("https://3333.us:8443");
+    easyrtc.setSocketUrl("https://2222.us:8443");
     easyrtc.enableDebug(false);
     console.log("Initializing.");
     easyrtc.enableAudio(false);

@@ -101,7 +101,7 @@ function addSrcButton(buttonLabel, videoId) {
 
 function connect() {
     console.log("Initializing.");
-    easyrtc.setSocketUrl("https://3333.us:8443");
+    easyrtc.setSocketUrl("https://2222.us:8443");
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.connect("easyrtc.multistream", loginSuccess, loginFailure);
     easyrtc.setAutoInitUserMedia(false);

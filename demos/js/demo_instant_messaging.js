@@ -34,7 +34,7 @@ function addToConversation(who, msgType, content) {
 
 
 function connect() {
-    easyrtc.setSocketUrl("https://3333.us:8443");
+    easyrtc.setSocketUrl("https://2222.us:8443");
     easyrtc.setPeerListener(addToConversation);
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.connect("easyrtc.instantMessaging", loginSuccess, loginFailure);
