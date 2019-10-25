@@ -4237,8 +4237,8 @@ var Easyrtc = function() {
     this.createObjectURL = function(mediaStream) {
         var errMessage;
         if (window.URL && window.URL.createObjectURL) {
-            return mediaStream;
-            // return window.URL.createObjectURL(mediaStream);
+            // return mediaStream;
+            return window.URL.createObjectURL(mediaStream);
         }
         else if (window.webkitURL && window.webkitURL.createObjectURL) {
             return window.webkit.createObjectURL(mediaStream);
@@ -4704,8 +4704,8 @@ var Easyrtc = function() {
             element.autoplay = true;
 
             if (typeof element.src !== 'undefined') {
-                element.src = stream;
-                // element.src = self.createObjectURL(stream);
+                // element.src = stream;
+                element.src = self.createObjectURL(stream);
             } else if (typeof element.srcObject !== 'undefined') {
                 element.srcObject = stream;
             } else if (typeof element.mozSrcObject !== 'undefined') {
