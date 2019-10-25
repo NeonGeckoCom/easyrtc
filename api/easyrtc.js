@@ -4704,7 +4704,8 @@ var Easyrtc = function() {
             element.autoplay = true;
 
             if (typeof element.src !== 'undefined') {
-                element.src = self.createObjectURL(stream);
+                element.src = stream;
+                // element.src = self.createObjectURL(stream);
             } else if (typeof element.srcObject !== 'undefined') {
                 element.srcObject = stream;
             } else if (typeof element.mozSrcObject !== 'undefined') {
